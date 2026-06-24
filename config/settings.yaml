@@ -1,0 +1,57 @@
+# ─── Configurações do Projeto YOLO Pipe Counter ──────────────────────────────
+
+project:
+  name: "yolo-pipe-counter"
+  version: "1.0.0"
+
+model:
+  # Modelo base: nano (n), small (s), medium (m), large (l), xlarge (x)
+  arch: "yolo26n"
+  # Tamanho da imagem de treino (múltiplo de 32)
+  imgsz: 640
+  # Número de épocas
+  epochs: 100
+  # Batch size
+  batch: 16
+  # Paciência para early stopping
+  patience: 20
+  # Taxa de aprendizado inicial
+  lr0: 0.01
+  # Dispositivo: "cpu", "0", "0,1" (GPU)
+  device: "cpu"
+
+dataset:
+  # Classes de objetos (tubos podem ter variações)
+  classes:
+    - pipe_straight
+    - pipe_bent
+    - pipe_connector
+    - pipe_valve
+    - pipe_flange
+  # Divisão treino/validação
+  train_split: 0.85
+  # Semente aleatória
+  seed: 42
+
+augmentation:
+  enabled: true
+  # Número de aumentações por imagem original
+  copies: 3
+  # Probabilidades de cada transformação
+  horizontal_flip: 0.5
+  vertical_flip: 0.1
+  rotate_limit: 30
+  brightness_limit: 0.2
+  contrast_limit: 0.2
+  scale_limit: 0.3
+  blur_limit: 3
+
+inference:
+  # Confidence threshold
+  conf: 0.5
+  # IoU threshold para NMS
+  iou: 0.45
+  # Exibir bounding boxes
+  show_boxes: true
+  # Exibir contagem na imagem
+  show_count: true

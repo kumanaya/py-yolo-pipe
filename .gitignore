@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Models (large binary files)
+models/*.pt
+yolo*.pt
+*.ts
+
+# Training artifacts
+runs/
+
+# Output images
+output/
+
+# Input images
+input/
+
+# Dataset (images + labels)
+dataset/images/
+dataset/labels/
+dataset/*.cache
+
+# VS Code
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
