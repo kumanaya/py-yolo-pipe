@@ -2,10 +2,17 @@
 __pycache__/
 *.pyc
 
-# Trained YOLO weights (download from releases)
-yolo*.pt
+# Pretrained YOLO weights (download from releases)
+yolo26n.pt
+yolo26s.pt
 yoloe*.pt
 *.ts
+
+# Older model versions
+models/best.pt
+models/best_v2.pt
+models/best_v3.pt
+models/best_v4.pt
 
 # Training artifacts
 runs/
